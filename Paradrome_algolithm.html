@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript">
+    function isParadrome(string){
+  var string = string.toLowerCase();
+  var characterArr = string.split(' ');
+  var validCharacters = 'abcdefghijklmnopqrstuvwxyz'.split(' ');
+  var letterArr = [];
+  characterArr.forEach(chr => {
+    if(validCharacters.indexOf(chr) > -1)
+      letterArr.push(chr);
+  });
+  var valid = true;
+  if(letterArr.join('') ===letterArr.reverse().join(''))
+   valid = true;
+  else  valid = false;
+  console.log(valid);
+  
+}
+isParadrome("Racing car is mine");
+  </script>
+</head>
+<body>
+
+</body>
+</html>

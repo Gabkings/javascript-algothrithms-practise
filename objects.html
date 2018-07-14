@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		var student, message = '',report,search;
+		var students = [
+           {
+           	name: 'Gabriel',
+           	track: 'ios',
+           	points: '234',
+           	level: 'tree house student'
+           },
+           { 	name: 'Gitonga',
+           	track: 'Web',
+           	points: 23234,
+           	level: 'tree house student'},
+           {
+           	 	name: 'Gabriel',
+           	    track: 'design',
+           	    points: '234',
+           	    level: 'tree house student'
+           },
+           {
+           	 	name: 'Gabriel Gitonga',
+           	track: 'ios',
+           	points: '234',
+           	level: 'tree house student'
+           },
+           { 	name: 'Gabriel123',
+           	    track: 'css',
+           		points: '1234',
+           		level: 'tree house student'
+           	},
+           { 	
+           		name: 'Gabriel kings',
+           		track: 'ios',
+           		points: '2342',
+           		level: 'tree house student'
+           	}
+		];
+		function studentData(student){
+			for( var i = 0; i < students.length; i += 1){
+				student = students[i];
+				report +="<h2> Name: " +student.name+ "</h2>";
+				report += "<p> Track: " +student.track+ "</p>";
+				report += "<p> Points: " +student.track+ "</p>";
+				report += "<p> Level: " +student.track+ "</p>";
+			}
+			return report;
+			
+		}
+		while(true){
+			search = prompt("Type a name of student [john] to view student details or type quit to end program");
+			if( search === null || search.toLowerCase() === "quit" ){
+				break;
+			}
+			for( var i = 0; i < students.length; i += 1){
+				student = students[i];
+				if(student.name === search){
+                   print(studentData(report));
+                   break;
+				}else if(search.toLowerCase === "list"){
+					message +="<h2> Name: " +student.name+ "</h2>";
+					message += "<p> Track: " +student.track+ "</p>";
+					message += "<p> Points: " +student.track+ "</p>";
+					message += "<p> Level: " +student.track+ "</p>";
+					print(message);
+					break;
+
+				}else if(student.name !== search){
+					alert("Sorry such a name in our records please");
+					break;
+				}
+				
+			}
+		}
+			
+		function print(message){
+			return document.getElementById("output").innerHTML = message;
+		}
+
+
+	</script>
+</head>
+<body>
+  <div id="output"></div>
+</body>
+</html>

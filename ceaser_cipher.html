@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function ceaser_cipher(str , num){
+  num = num % 26;
+  var lowerCase = str.toLowerCase();
+  var alphabets = 'abcdefghijklmnopqrstuvwxyz'.split('');
+  var newString = '';
+  for(var i = 0; i<lowerCase.length; i++ ){
+    var currentLetter = lowerCase[i];
+    if(currentLetter === ' '){
+      newString += currentLetter;
+      continue;
+    }
+    var currentIndex = alphabets.indexOf(currentLetter);
+    var newIndex = currentIndex + num;
+    
+    if(newIndex > 25) {
+      newIndex = newIndex - 26;
+    }
+    if(newIndex < 0){
+      newIndex = 26 + newIndex;
+    }
+    if(str[i] === str[i].toUpperCase()){
+      newString += alphabets[newIndex].toUpperCase();
+      
+    }else{
+      newString += alphabets[newIndex];
+    }
+  }
+  return newString;
+}
+
+console.log(ceaser_cipher("kafura" ,4));
+	</script>
+</head>
+<body>
+
+</body>
+</html>
